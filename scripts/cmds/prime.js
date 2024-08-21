@@ -54,7 +54,9 @@ module.exports = {
     if (messageContent.startsWith("prime")) {
       const input = messageContent.replace(/^ai\s*/, "").trim();
       const { response, messageID } = await getAIResponse(input, event.senderID, message.messageID);
-      message.reply(`✰. . 𝗧𝗥𝗔𝗡𝗦𝗙𝗢𝗥𝗠𝗘𝗥𝗦 . .✰\n⧠⧠⧠⧠⧠.✰.✰.⧠⧠⧠⧠⧠\n\n${response}\n\n╰┈┈┈➤⊹⊱✰✫✫✰⊰⊹`, messageID);
+      message.reply(`[📕] 𝗢𝗣𝗧𝗜𝗠𝗨𝗦 𝗣𝗥𝗜𝗠𝗘\n⧠⧠⧠⧠⧠.✰.✰.⧠⧠⧠⧠⧠\n\n${response}\n\n╰┈┈┈➤⊹⊱✰✫✫✰⊰⊹`, messageID);
+      api.setMessageReaction("📕", event.messageID, () => {}, true);
+      
     }
   }
 };
